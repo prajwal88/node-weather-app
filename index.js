@@ -2,6 +2,20 @@ let request = require('request');
 const argv = require('yargs').argv;
 const envHelper = require('./env.js')
 
+var express = require('express')
+var app = express()
+
+//Define request response in root URL (/)
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
+
+//Launch listening server on port 8081
+app.listen(8081, function () {
+  console.log('app listening on port 8081!')
+})
+
+
 let apiKey = envHelper.ApiKey;
 let city = argv.c || 'Bangalore';
 let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
