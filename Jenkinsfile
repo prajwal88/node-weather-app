@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("prajwal8/node-weather-app .")
+        app = docker.build("prajwal8/nodeapp .")
     }
 
 
